@@ -1,0 +1,134 @@
+===================================================
+Comprobando el testing de formulario los campos nombre y carrera
+
+from selenium import webdriver 
+from time import sleep 
+from webdriver_manager.chrome import ChromeDriverManager 
+from selenium.webdriver.chrome.options import Options  
+  
+usr=input('Enter nombre Id:')  
+pwd=input('Enter Carrera:')  
+  
+driver = webdriver.Chrome(ChromeDriverManager().install()) 
+driver.get('https://unicen.edu.bo/') 
+print ("Opened unicen") 
+sleep(1) 
+  
+nombre_box = driver.find_element_by_id('wdform_2_element6') 
+nombre_box.send_keys(usr) 
+print ("Nommbre Id entered") 
+sleep(1) 
+  
+carrera_box = driver.find_element_by_id('wdform_6_element6') 
+carrera_box.send_keys(pwd) 
+print ("Carrera entered") 
+  
+login_box = driver.find_element_by_id('button-submit') 
+login_box.click() 
+  
+print ("Done") 
+input('Press anything to quit') 
+driver.quit() 
+print("Finished") 
+
+===========================================================
+Esta es una testing para la funcionalidad de búsqueda en https://unicen.edu.bo
+
+import time
+import unittest
+from selenium import webdriver 
+from webdriver_manager.chrome import ChromeDriverManager 
+from selenium.webdriver.chrome.options import Options  
+def setUp(self):
+   
+ def test_search_in_python_org(self):
+  driver = self.driver
+  driver.get("https://unicen.edu.bo/")
+  time.sleep(3)
+  self.assertIn("Pyttthon", driver.title)
+  time.sleep(3)
+  elem = driver.find_element_by_name("s")
+  time.sleep(3)
+  elem.send_keys("aprender")
+  elem.send_keys(Keys.RETURN)
+  time.sleep(3)
+  assert "No results found." not in driver.page_source
+ def tearDown(self):
+  self.driver.close()
+if __name__ == "__main__":
+ unittest.main()
+
+=============================================================
+Esta es una test para la funcionalidad inicio de seccion para los estudiantes del unicen en
+
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager 
+from selenium.webdriver.chrome.options import Options 
+from selenium.webdriver.common.keys import Keys
+from time import sleep
+import io
+  
+driver = webdriver.Chrome(ChromeDriverManager().install())
+driver.get("http://190.104.11.190/sia_t_salud/login/iniciosesion/")
+  
+elem = driver.find_element_by_xpath("//*")
+source_code = elem.get_attribute("innerHTML")
+  
+filename = open('qalovers_codigo_fuente.html', 'w')
+filename.write(source_code)
+filename.close()
+     
+sleep(10)
+  
+driver.close()
+
+======================================================
+Es un testing de error de enlace con el inicio de seccion del estudiante de unicen 
+
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager 
+from selenium.webdriver.chrome.options import Options 
+from selenium.webdriver.common.keys import Keys
+from time import sleep
+import io 
+driver = webdriver.Chrome(ChromeDriverManager().install())
+driver.get("https://unicen.edu.bo/unicen_siiaa/cochabamba/ingreso.php")
+username = driver.find_element_by_id("txt_login")
+password = driver.find_element_by_id("txt_pass")
+submit   = driver.find_element_by_id("btn_ingresar")
+submit.click()
+wait = driver( driver, 5 )
+page_title = driver.title
+assert page_title == "Unicen"
+
+==================================================
+Comprobando el tenting de link de login de los estudiantes unicen
+
+from time import sleep 
+from selenium import webdriver 
+from webdriver_manager.chrome import ChromeDriverManager 
+from selenium.webdriver.chrome.options import Options  
+
+driver = webdriver.Chrome(ChromeDriverManager().install()) 
+driver.get('http://190.104.11.190/sia/sedeCbba-Central') 
+
+print ("Done") 
+input('Press anything to quit') 
+driver.quit() 
+print("Finished") 
+===================================================
+Comprobando el testing de link de usuarios unicen
+
+from time import sleep 
+from selenium import webdriver 
+from webdriver_manager.chrome import ChromeDriverManager 
+from selenium.webdriver.chrome.options import Options  
+    
+driver = webdriver.Chrome(ChromeDriverManager().install()) 
+driver.get('http://190.104.11.187/unicen_siiaa/cochabamba/ingreso.php') 
+
+
+print ("Done") 
+input('Press anything to quit') 
+driver.quit() 
+print("Finished") 

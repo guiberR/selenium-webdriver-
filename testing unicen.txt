@@ -1,0 +1,18 @@
+Solicitar inforamcion de las carreras
+
+1 Verifica que el campo de entrada Nombre no permita números negativos o positivos
+2 Verifique que el campo de entrada Nombre no permita caracteres alfanuméricos
+3 Verifique que el tld de entrada del nombre no permita espacios en blanco
+4 Verifique que el campo de entrada de Nombre permita caracteres en mayúsculas y minúsculas
+5. Verifique que el campo de entrada de apellido no permita caracteres alfanuméricos
+6 Verifique que el campo de entrada de apellido no permita números negativos o positivos
+7 Verifique que el campo de entrada de apellido permita caracteres en mayúsculas y minúsculas
+8 Verifique que el campo de entrada del número de teléfono móvil no permita caracteres
+9 Verifique que el campo de entrada del número de teléfono móvil no permita caracteres alfanuméricos
+10 Verifique que el campo de entrada de número de teléfono móvil permita números positivos
+11 Verifique que el campo de entrada del número de teléfono móvil no permita números negativos
+12 Verifique que el campo de entrada del número de teléfono móvil no permita espacios en blanco
+13 Verifique que el campo de entrada de correo electrónico no permita solo dígitos
+14 Verifique que el campo de entrada de correo electrónico no permita solo caracteres alfanuméricos
+15 Verifique que el campo de entrada de correo electrónico no permita espacios en blanco
+16 Verifique que cuando todos los campos de entrada se llenen correctamente y presione el botón de enviar
